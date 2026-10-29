@@ -1,0 +1,492 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap');
+
+:root {
+  --bg: #15102d;
+  --cream: #f7f4e9;
+  --yellow: #ffda3f;
+  --pink: #ff4198;
+  --teal: #39dfce;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--cream);
+  font-family: 'Kanit', Tahoma, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* HEADER */
+
+.header {
+  height: 88px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 4%;
+  background: var(--bg);
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.logo > span:last-child {
+  background: var(--yellow);
+  color: var(--bg);
+  padding: 2px 7px;
+}
+
+.game-icon {
+  font-size: 25px;
+}
+
+.navbar {
+  display: flex;
+  gap: 10px;
+}
+
+.navbar a {
+  font-size: 13px;
+  font-weight: 700;
+  border: 2px solid white;
+  padding: 12px 20px;
+  box-shadow: 4px 4px 0 #8650e9;
+}
+
+.navbar a:hover,
+.navbar a.active {
+  background: var(--yellow);
+  color: var(--bg);
+  border-color: var(--yellow);
+}
+
+/* ARCADE BAR */
+
+.arcade-bar {
+  background: var(--pink);
+  color: var(--bg);
+  overflow: hidden;
+  white-space: nowrap;
+  font: 700 13px 'Space Mono', monospace;
+  letter-spacing: 2px;
+  padding: 10px 0;
+}
+
+/* HERO SECTION */
+
+.hero {
+  min-height: 575px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  padding: 62px 4% 45px;
+
+  background-image:
+    radial-gradient(#393254 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.hero h1 {
+  font-size: clamp(76px, 10.2vw, 155px);
+  line-height: 0.89;
+  letter-spacing: -5px;
+  margin: 0;
+  font-weight: 900;
+}
+
+.hero h1 .outline {
+  color: transparent;
+  -webkit-text-stroke: 3px var(--yellow);
+}
+
+.hero h1 .pink {
+  color: var(--pink);
+}
+
+.star {
+  position: absolute;
+  font-size: 38px;
+  color: var(--yellow);
+  pointer-events: none;
+}
+
+.star-1 {
+  top: 40px;
+  left: 60%;
+}
+
+.star-2 {
+  top: 240px;
+  left: 46%;
+  color: var(--teal);
+  font-size: 25px;
+}
+
+/* SORT BUTTONS */
+
+.sort-buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 55px;
+  flex-wrap: wrap;
+}
+
+.sort-buttons button {
+  cursor: pointer;
+  border: 2px solid var(--cream);
+  background: transparent;
+  color: var(--cream);
+  padding: 11px 21px;
+  border-radius: 40px;
+  font-weight: 700;
+  font-family: inherit;
+  transition: 0.2s;
+}
+
+.sort-buttons button:hover,
+.sort-buttons button.selected {
+  background: var(--cream);
+  color: var(--bg);
+}
+
+/* STEAM PROFILE */
+
+.hero-right {
+  width: 38%;
+  align-self: center;
+  padding-top: 90px;
+}
+
+.steam-tag {
+  display: inline-block;
+  background: var(--teal);
+  color: var(--bg);
+  padding: 10px 22px;
+  border-radius: 40px;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 28px;
+}
+
+.price-ticket {
+  background: var(--yellow);
+  color: var(--bg);
+  border: 3px solid var(--cream);
+  box-shadow: 8px 8px 0 var(--pink);
+  transform: rotate(-2deg);
+  padding: 24px 25px;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.price-ticket strong {
+  display: block;
+  font-size: clamp(19px, 2.7vw, 36px);
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+.price-ticket small {
+  display: block;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+/* COLLECTION */
+
+.collection h2 {
+  font-size: 40px;
+  margin: 0;
+  padding: 40px 4% 26px;
+  font-weight: 900;
+}
+
+.collection h2 span {
+  color: var(--yellow);
+}
+
+#game-list {
+  border-top: 2px solid #41326a;
+}
+
+/* GAME ROW */
+
+.game-row {
+  display: grid;
+  grid-template-columns:
+    75px 245px minmax(180px, 1.05fr)
+    minmax(200px, 1.3fr) 105px;
+
+  align-items: center;
+  gap: 25px;
+  padding: 22px 4%;
+  border-bottom: 2px solid #40316a;
+  min-height: 183px;
+  transition: background 0.2s;
+}
+
+.game-row:hover {
+  background: #251d43;
+}
+
+.game-row:first-child {
+  background: #332a30;
+  border-left: 8px solid var(--yellow);
+  padding-left: calc(4% - 8px);
+}
+
+/* RANK NUMBER */
+
+.rank {
+  background: var(--accent);
+  color: var(--bg);
+  font-size: 29px;
+  font-weight: 900;
+  text-align: center;
+  padding: 12px 5px;
+  border: 4px solid var(--cream);
+  box-shadow: 5px 5px 0 #514564;
+}
+
+/* GAME IMAGE */
+
+.game-row img {
+  width: 100%;
+  aspect-ratio: 1.75;
+  object-fit: cover;
+  border: 3px solid var(--cream);
+  box-shadow: 5px 5px 0 var(--accent);
+}
+
+/* GAME INFORMATION */
+
+.game-info h3 {
+  font-size: clamp(19px, 2vw, 27px);
+  line-height: 1.14;
+  margin: 0 0 10px;
+  font-weight: 900;
+}
+
+.genre {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--bg);
+  font: 700 12px 'Space Mono', monospace;
+  padding: 4px 8px;
+  margin-right: 5px;
+  margin-bottom: 4px;
+}
+
+.genre.favorite {
+  background: var(--yellow);
+}
+
+.description {
+  font-size: 14px;
+  line-height: 1.6;
+  max-width: 350px;
+}
+
+.price {
+  border: 2px solid var(--cream);
+  padding: 10px 9px;
+  font: 700 14px 'Space Mono', monospace;
+  white-space: nowrap;
+  text-align: center;
+}
+
+/* FOOTER */
+
+footer {
+  border-top: 6px solid var(--pink);
+  margin-top: 85px;
+  padding: 40px 4%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #0d0921;
+}
+
+footer h2 {
+  color: var(--yellow);
+  margin: 0;
+  font-size: 23px;
+}
+
+footer p {
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+.footer-right {
+  text-align: right;
+}
+
+/* TABLET */
+
+@media (max-width: 1100px) {
+  .game-row {
+    grid-template-columns: 60px 200px 1fr 95px;
+    gap: 20px;
+  }
+
+  .description {
+    grid-column: 3;
+    grid-row: 2;
+    margin: 0;
+  }
+
+  .price {
+    grid-column: 4;
+    grid-row: 1 / 3;
+  }
+
+  .game-row img {
+    grid-row: 1 / 3;
+  }
+
+  .rank {
+    grid-row: 1 / 3;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+  .header {
+    height: auto;
+    padding: 20px 5%;
+    gap: 18px;
+    flex-wrap: wrap;
+  }
+
+  .navbar {
+    width: 100%;
+    justify-content: space-between;
+    gap: 5px;
+  }
+
+  .navbar a {
+    padding: 9px 11px;
+    font-size: 11px;
+  }
+
+  .hero {
+    min-height: 0;
+    flex-direction: column;
+    padding: 55px 5%;
+  }
+
+  .hero h1 {
+    font-size: clamp(70px, 16vw, 110px);
+  }
+
+  .hero-right {
+    width: 100%;
+    padding: 0;
+  }
+
+  .sort-buttons {
+    margin-top: 35px;
+  }
+
+  .collection h2 {
+    font-size: 30px;
+  }
+
+  .game-row {
+    grid-template-columns: 50px minmax(95px, 145px) 1fr;
+    gap: 12px;
+    padding: 18px 5%;
+    min-height: 0;
+  }
+
+  .rank {
+    font-size: 18px;
+    padding: 8px 0;
+    grid-row: 1;
+  }
+
+  .game-row img {
+    grid-row: 1;
+    grid-column: 2;
+  }
+
+  .game-info {
+    grid-column: 3;
+  }
+
+  .game-info h3 {
+    font-size: 17px;
+  }
+
+  .description {
+    grid-column: 2 / 4;
+    grid-row: 2;
+    font-size: 12px;
+    max-width: none;
+  }
+
+  .price {
+    grid-column: 3;
+    grid-row: 3;
+    justify-self: end;
+    font-size: 11px;
+  }
+
+  .genre {
+    font-size: 9px;
+  }
+
+  .price-ticket {
+    padding: 18px;
+  }
+
+  footer {
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .footer-right {
+    text-align: left;
+  }
+}
+
+@media (max-width: 400px) {
+  .hero h1 {
+    font-size: 65px;
+  }
+
+  .price-ticket strong {
+    font-size: 17px;
+  }
+
+  .game-row {
+    grid-template-columns: 40px minmax(85px, 115px) 1fr;
+    gap: 9px;
+  }
+
+  .game-info h3 {
+    font-size: 15px;
+  }
+}

@@ -1,0 +1,672 @@
+
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PLAYER LOG - MY TOP 10 GAMES</title>
+
+    <style>
+        /* ตั้งค่าพื้นฐาน */
+        body {
+            margin: 0;
+            background-color: #15102d;
+            color: white;
+            font-family: Arial, Tahoma, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* ส่วนหัวเว็บไซต์ */
+        header {
+            background-color: #15102d;
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            background-color: #ffda3f;
+            color: #15102d;
+            padding: 5px;
+        }
+
+        /* เมนู */
+        nav a {
+            color: white;
+            text-decoration: none;
+            border: 2px solid white;
+            padding: 10px 15px;
+            margin-left: 10px;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            background-color: #ffda3f;
+            color: #15102d;
+        }
+
+        /* แถบสีชมพู */
+        .bar {
+            background-color: #ff4198;
+            color: #15102d;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 13px;
+        }
+
+        /* จัดพื้นที่แต่ละส่วน */
+        section {
+            padding: 70px 5%;
+        }
+
+        h1 {
+            font-size: 80px;
+            line-height: 1;
+            margin: 20px 0;
+        }
+
+        h2 {
+            font-size: 45px;
+        }
+
+        .yellow {
+            color: #ffda3f;
+        }
+
+        .pink {
+            color: #ff4198;
+        }
+
+        p {
+            line-height: 1.8;
+        }
+
+        /* HOME */
+        .home {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+            min-height: 500px;
+        }
+
+        .home-text {
+            width: 50%;
+        }
+
+        .home-image {
+            width: 45%;
+        }
+
+        .home-image img {
+            width: 100%;
+            border: 6px solid #ffda3f;
+            box-shadow: 12px 12px #ff4198;
+        }
+
+        .button {
+            display: inline-block;
+            background-color: #ffda3f;
+            color: #15102d;
+            padding: 15px 25px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        .button:hover {
+            background-color: #39dfce;
+        }
+
+        /* STORY */
+        .story {
+            background-color: #0e0a20;
+        }
+
+        .game-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .game-card {
+            background-color: #241b43;
+            border: 2px solid #49366f;
+            padding-bottom: 20px;
+        }
+
+        .game-card:hover {
+            border-color: #ffda3f;
+        }
+
+        .game-card img {
+            width: 100%;
+            height: 190px;
+            object-fit: cover;
+        }
+
+        .game-card h3 {
+            font-size: 22px;
+            margin: 15px 15px 5px;
+        }
+
+        .game-card p {
+            margin: 10px 15px;
+            color: #cccccc;
+        }
+
+        .game-card a {
+            display: inline-block;
+            margin: 10px 15px;
+            color: #ffda3f;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* COLLECTION */
+        .collection {
+            background-color: #15102d;
+        }
+
+        .game-detail {
+            display: flex;
+            align-items: center;
+            gap: 35px;
+            border-bottom: 2px solid #49366f;
+            padding: 30px 0;
+        }
+
+        .game-detail img {
+            width: 35%;
+            border: 3px solid white;
+        }
+
+        .game-detail-text {
+            width: 65%;
+        }
+
+        .game-detail h3 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: #39dfce;
+            color: #15102d;
+            padding: 5px 10px;
+            font-weight: bold;
+            font-size: 12px;
+        }
+
+        .price {
+            color: #ffda3f;
+            font-weight: bold;
+        }
+
+        /* ABOUT */
+        .about {
+            background-color: #0e0a20;
+            text-align: center;
+        }
+
+        .about-box {
+            max-width: 750px;
+            margin: auto;
+            background-color: #241b43;
+            border: 3px solid white;
+            padding: 35px;
+        }
+
+        .about-box h3 {
+            color: #ffda3f;
+            font-size: 30px;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #0a0718;
+            border-top: 5px solid #ff4198;
+            padding: 30px;
+            text-align: center;
+        }
+
+        /* หน้าจอมือถือ */
+        @media (max-width: 768px) {
+            header {
+                display: block;
+                text-align: center;
+            }
+
+            nav {
+                margin-top: 25px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 5px;
+            }
+
+            .home {
+                display: block;
+            }
+
+            .home-text,
+            .home-image {
+                width: 100%;
+            }
+
+            .home-image {
+                margin-top: 40px;
+            }
+
+            h1 {
+                font-size: 55px;
+            }
+
+            h2 {
+                font-size: 35px;
+            }
+
+            .game-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .game-detail {
+                display: block;
+            }
+
+            .game-detail img,
+            .game-detail-text {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="logo">
+            🎮 PLAYER <span>LOG</span>
+        </div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#story">Story</a>
+            <a href="#collection">Collection</a>
+            <a href="#about">About</a>
+        </nav>
+    </header>
+
+    <div class="bar">
+        ★ PRESS START ★ INSERT COIN ★ TOP 10 GAMES ★ PLAYER ONE ★
+    </div>
+
+    <!-- HOME -->
+    <section id="home" class="home">
+
+        <div class="home-text">
+            <p class="yellow">PERSONAL GAME COLLECTION</p>
+
+            <h1>
+                MY TOP<br>
+                <span class="yellow">10</span><br>
+                GAMES<span class="pink">.</span>
+            </h1>
+
+            <p>
+                ยินดีต้อนรับสู่ PLAYER LOG
+                เว็บไซต์รวบรวม 10 เกมโปรดของผม
+                ที่เต็มไปด้วยความสนุก ความท้าทาย
+                และประสบการณ์ที่น่าจดจำ
+            </p>
+
+            <a href="#story" class="button">
+                EXPLORE COLLECTION ↗
+            </a>
+        </div>
+
+        <div class="home-image">
+            <img src="images/source-1.jpg" alt="Dragon's Dogma 2">
+        </div>
+
+    </section>
+
+    <!-- STORY -->
+    <section id="story" class="story">
+
+        <p class="yellow">MY GAME LIBRARY</p>
+        <h2>TOP <span class="yellow">10 GAMES.</span></h2>
+
+        <p>
+            คอลเลกชันเกมทั้ง 10 อันดับที่ผมเลือกมา
+            แต่ละเกมมีเอกลักษณ์และรูปแบบการเล่นที่แตกต่างกัน
+        </p>
+
+        <div class="game-grid">
+
+            <!-- GAME 1 -->
+            <div class="game-card">
+                <img src="images/source-1.jpg" alt="Dragon's Dogma 2">
+                <h3>01 Dragon's Dogma 2</h3>
+                <p>Action RPG</p>
+                <a href="#game1">VIEW DETAILS ↗</a>
+            </div>
+
+            <!-- GAME 2 -->
+            <div class="game-card">
+                <img src="images/source-2.jpg" alt="Street Fighter 6">
+                <h3>02 Street Fighter 6</h3>
+                <p>Fighting</p>
+                <a href="#game2">VIEW DETAILS ↗</a>
+            </div>
+
+            <!-- GAME 3 -->
+            <div class="game-card">
+                <img src="images/source-3.jpg" alt="Tekken 8">
+                <h3>03 Tekken 8</h3>
+                <p>Fighting</p>
+                <a href="#game3">VIEW DETAILS ↗</a>
+            </div>
+
+            <!-- GAME 4 -->
+            <div class="game-card">
+                <img src="images/source-8.jpg" alt="Sekiro">
+                <h3>04 Sekiro</h3>
+                <p>Soulslike</p>
+                <a href="#game4">VIEW DETAILS ↗</a>
+            </div>
+
+            <!-- GAME 5 -->
+            <div class="game-card">
+                <img src="images/source-5.jpg" alt="Khazan">
+                <h3>05 The First Berserker: Khazan</h3>
+                <p>Soulslike</p>
+                <a href="#game5">VIEW DETAILS ↗</a>
+            </div>
+
+            <!-- GAME 6 -->
+            <div class="game-card">
+                <img src="images/source-4.jpg" alt="Onimusha">
+                <h3>06 Onimusha: Way of the Sword</h3>
+                <p>Action</p>
+                <a href="#game6">VIEW DETAILS ↗</a>
+            </div>
+
+            <!-- GAME 7 -->
+            <div class="game-card">
+                <img src="images/source-6.jpg" alt="Nioh 2">
+                <h3>07 Nioh 2</h3>
+                <p>Soulslike</p>
+                <a href="#game7">VIEW DETAILS ↗</a>
+            </div>
+
+            <!-- GAME 8 -->
+            <div class="game-card">
+                <img src="images/source-7.jpg" alt="Monster Hunter Wilds">
+                <h3>08 Monster Hunter Wilds</h3>
+                <p>Action RPG</p>
+                <a href="#game8">VIEW DETAILS ↗</a>
+            </div>
+
+            <!-- GAME 9 -->
+            <div class="game-card">
+                <img src="images/source-10.jpg" alt="Valiant Hearts">
+                <h3>09 Valiant Hearts</h3>
+                <p>Puzzle Adventure</p>
+                <a href="#game9">VIEW DETAILS ↗</a>
+            </div>
+
+            <!-- GAME 10 -->
+            <div class="game-card">
+                <img src="images/source-9.jpg" alt="Battlefield 1">
+                <h3>10 Battlefield 1</h3>
+                <p>FPS</p>
+                <a href="#game10">VIEW DETAILS ↗</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- COLLECTION -->
+    <section id="collection" class="collection">
+
+        <p class="yellow">GAME DETAILS</p>
+        <h2>THE <span class="yellow">COLLECTION.</span></h2>
+
+        <p>รายละเอียดและเหตุผลที่เลือกเกมทั้ง 10 อันดับ</p>
+
+        <!-- DETAIL 1 -->
+        <div class="game-detail" id="game1">
+            <img src="images/source-1.jpg" alt="Dragon's Dogma 2">
+            <div class="game-detail-text">
+                <span class="tag">ACTION RPG</span>
+                <h3>01 Dragon's Dogma 2</h3>
+                <p>
+                    เกมแอ็กชันแฟนตาซีโลกเปิดที่มีระบบอาชีพ
+                    และ Pawn ร่วมออกผจญภัยไปกับผู้เล่น
+                </p>
+                <p>
+                    <b>เหตุผลที่ชอบ:</b>
+                    มีอิสระในการสำรวจโลก และระบบการต่อสู้ที่หลากหลาย
+                </p>
+                <p class="price">ราคา: ฿1,090</p>
+            </div>
+        </div>
+
+        <!-- DETAIL 2 -->
+        <div class="game-detail" id="game2">
+            <img src="images/source-2.jpg" alt="Street Fighter 6">
+            <div class="game-detail-text">
+                <span class="tag">FIGHTING</span>
+                <h3>02 Street Fighter 6</h3>
+                <p>
+                    เกมต่อสู้ที่มีระบบ Drive Gauge
+                    และโหมด World Tour
+                </p>
+                <p>
+                    <b>เหตุผลที่ชอบ:</b>
+                    ตัวละครหลากหลายและระบบต่อสู้สนุก
+                </p>
+                <p class="price">ราคา: ฿1,130</p>
+            </div>
+        </div>
+
+        <!-- DETAIL 3 -->
+        <div class="game-detail" id="game3">
+            <img src="images/source-3.jpg" alt="Tekken 8">
+            <div class="game-detail-text">
+                <span class="tag">FIGHTING</span>
+                <h3>03 Tekken 8</h3>
+                <p>
+                    เกมต่อสู้สามมิติที่มีระบบ Heat
+                    และกราฟิกที่สมจริง
+                </p>
+                <p>
+                    <b>เหตุผลที่ชอบ:</b>
+                    ชอบท่วงท่าการต่อสู้และการออกแบบตัวละคร
+                </p>
+                <p class="price">ราคา: ฿1,190</p>
+            </div>
+        </div>
+
+        <!-- DETAIL 4 -->
+        <div class="game-detail" id="game4">
+            <img src="images/source-8.jpg" alt="Sekiro">
+            <div class="game-detail-text">
+                <span class="tag">SOULSLIKE</span>
+                <h3>04 Sekiro: Shadows Die Twice</h3>
+                <p>
+                    เกมแอ็กชันซามูไรที่เน้นจังหวะการปัดป้อง
+                    และการต่อสู้ด้วยดาบ
+                </p>
+                <p>
+                    <b>เหตุผลที่ชอบ:</b>
+                    ความท้าทายของศัตรูและระบบต่อสู้
+                </p>
+                <p class="price">ราคา: ฿2,099</p>
+            </div>
+        </div>
+
+        <!-- DETAIL 5 -->
+        <div class="game-detail" id="game5">
+            <img src="images/source-5.jpg" alt="Khazan">
+            <div class="game-detail-text">
+                <span class="tag">SOULSLIKE</span>
+                <h3>05 The First Berserker: Khazan</h3>
+                <p>
+                    เกมแอ็กชันที่มีระบบการต่อสู้เข้มข้น
+                    และงานภาพที่มีเอกลักษณ์
+                </p>
+                <p>
+                    <b>เหตุผลที่ชอบ:</b>
+                    การออกแบบตัวละครและการต่อสู้กับบอส
+                </p>
+                <p class="price">ราคา: ฿1,690</p>
+            </div>
+        </div>
+
+        <!-- DETAIL 6 -->
+        <div class="game-detail" id="game6">
+            <img src="images/source-4.jpg" alt="Onimusha">
+            <div class="game-detail-text">
+                <span class="tag">ACTION</span>
+                <h3>06 Onimusha: Way of the Sword</h3>
+                <p>
+                    เกมแอ็กชันซามูไรที่มีการต่อสู้กับปีศาจ
+                    ในบรรยากาศญี่ปุ่นแฟนตาซี
+                </p>
+                <p>
+                    <b>เหตุผลที่ชอบ:</b>
+                    ชอบธีมซามูไรและการออกแบบปีศาจ
+                </p>
+                <p class="price">ราคา: ฿1,890</p>
+            </div>
+        </div>
+
+        <!-- DETAIL 7 -->
+        <div class="game-detail" id="game7">
+            <img src="images/source-6.jpg" alt="Nioh 2">
+            <div class="game-detail-text">
+                <span class="tag">SOULSLIKE</span>
+                <h3>07 Nioh 2</h3>
+                <p>
+                    เกมแอ็กชันที่มีอาวุธหลายรูปแบบ
+                    และพลังแปลงร่างเป็นโยไค
+                </p>
+                <p>
+                    <b>เหตุผลที่ชอบ:</b>
+                    ระบบปรับแต่งตัวละครและทักษะที่หลากหลาย
+                </p>
+                <p class="price">ราคา: ฿1,460</p>
+            </div>
+        </div>
+
+        <!-- DETAIL 8 -->
+        <div class="game-detail" id="game8">
+            <img src="images/source-7.jpg" alt="Monster Hunter Wilds">
+            <div class="game-detail-text">
+                <span class="tag">ACTION RPG</span>
+                <h3>08 Monster Hunter Wilds</h3>
+                <p>
+                    เกมล่ามอนสเตอร์ในโลกธรรมชาติขนาดใหญ่
+                    ที่มีสภาพแวดล้อมเปลี่ยนแปลง
+                </p>
+                <p>
+                    <b>เหตุผลที่ชอบ:</b>
+                    การออกแบบมอนสเตอร์และระบบอาวุธ
+                </p>
+                <p class="price">ราคา: ฿1,090</p>
+            </div>
+        </div>
+
+        <!-- DETAIL 9 -->
+        <div class="game-detail" id="game9">
+            <img src="images/source-10.jpg" alt="Valiant Hearts">
+            <div class="game-detail-text">
+                <span class="tag">PUZZLE ADVENTURE</span>
+                <h3>09 Valiant Hearts: The Great War</h3>
+                <p>
+                    เกมผจญภัยแก้ปริศนาที่เล่าเรื่องราว
+                    ในสงครามโลกครั้งที่หนึ่ง
+                </p>
+                <p>
+                    <b>เหตุผลที่ชอบ:</b>
+                    การเล่าเรื่องและงานภาพสไตล์การ์ตูน
+                </p>
+                <p class="price">ราคา: ฿400</p>
+            </div>
+        </div>
+
+        <!-- DETAIL 10 -->
+        <div class="game-detail" id="game10">
+            <img src="images/source-9.jpg" alt="Battlefield 1">
+            <div class="game-detail-text">
+                <span class="tag">FPS</span>
+                <h3>10 Battlefield 1</h3>
+                <p>
+                    เกมยิงมุมมองบุคคลที่หนึ่งในฉาก
+                    สงครามโลกครั้งที่หนึ่ง
+                </p>
+                <p>
+                    <b>เหตุผลที่ชอบ:</b>
+                    บรรยากาศสนามรบและฉากต่อสู้ขนาดใหญ่
+                </p>
+                <p class="price">ราคา: ฿1,099</p>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="about">
+
+        <p class="yellow">ABOUT THE COLLECTOR</p>
+        <h2>ABOUT <span class="yellow">ME.</span></h2>
+
+        <div class="about-box">
+            <h3>ZABANIYA</h3>
+            <p>GAME ENTHUSIAST / COLLECTOR</p>
+
+            <h3>WHY I COLLECT</h3>
+            <p>
+                ผมเลือกเกมเป็นหัวข้อ Personal Collection
+                เพราะเกมเป็นหนึ่งในสิ่งที่ผมสนใจ
+                เกมแต่ละเกมมีเอกลักษณ์ทั้งด้านภาพ
+                การออกแบบตัวละคร ระบบการเล่น และเรื่องราว
+            </p>
+
+            <h3>DESIGN CONCEPT</h3>
+            <p>
+                เว็บไซต์ PLAYER LOG ได้แรงบันดาลใจจากเกมอาร์เคด
+                โดยใช้สีม่วงเข้ม ชมพู เหลือง และฟ้านีออน
+                เพื่อให้เว็บไซต์ดูสนุกและสะท้อนบรรยากาศของโลกเกม
+            </p>
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <h3>PLAYER LOG</h3>
+        <p>Personal Game Collection</p>
+        <p>GAD23867 Coding for Graphic Design</p>
+        <p>© 2026 PLAYER LOG</p>
+    </footer>
+
+</body>
+</html>
